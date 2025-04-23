@@ -1,0 +1,6 @@
+.env
+tmp/*
+storage/*
+.idea/*
+internal/core/embeddings
+__pycache__
