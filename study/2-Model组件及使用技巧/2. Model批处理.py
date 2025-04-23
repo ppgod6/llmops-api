@@ -13,7 +13,7 @@ prompt = ChatPromptTemplate.from_messages([
     ("human", "{query}")
 ]).partial(now=datetime.now())
 
-# 2.创建大语言模型
+# 2. 创建大语言模型
 llm = ChatDeepSeek(model="deepseek-chat", api_key=os.getenv("OPENAI_API_KEY"))
 
 ai_messages = llm.batch([
