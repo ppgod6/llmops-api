@@ -1,10 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-"""
-@Time    : 2024/09/03 14:57
-@Author  : thezehui@gmail.com
-@File    : indexing_service.py
-"""
 import logging
 import re
 import uuid
@@ -15,15 +8,15 @@ from uuid import UUID
 
 from flask import Flask, current_app
 from injector import inject
-from internal.entity.cache_entity import (
-    LOCK_DOCUMENT_UPDATE_ENABLED
-)
 from langchain_core.documents import Document as LCDocument
 from redis import Redis
 from sqlalchemy import func
 from weaviate.classes.query import Filter
 
 from internal.core.file_extractor import FileExtractor
+from internal.entity.cache_entity import (
+    LOCK_DOCUMENT_UPDATE_ENABLED
+)
 from internal.entity.dataset_entity import DocumentStatus, SegmentStatus
 from internal.exception import NotFoundException
 from internal.lib.helper import generate_text_hash
